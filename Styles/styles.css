@@ -1,10 +1,25 @@
+/* Estilo geral */
 body {
+    display: flex;
+    flex-direction: column;
     background-color: black;
     color: #fcfcfc;
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 80px; /* Correção: espaço para a navbar sticky */
+}
+
+/* Navbar */
 .navbar {
     background-color: black;
     position: sticky;
@@ -15,7 +30,8 @@ body {
     transition: background-color 0.3s ease-in-out;
 }
 
-.navbar-brand, .nav-link {
+.navbar-brand,
+.nav-link {
     color: #fcfcfc !important;
     position: relative;
     font-weight: bold;
@@ -54,11 +70,13 @@ body {
     filter: invert(100%);
 }
 
+/* Seções */
 .section {
     padding: 80px 0;
     text-align: center;
 }
 
+/* Itens de serviço */
 .service-item {
     padding: 20px;
     border-radius: 10px;
@@ -71,26 +89,36 @@ body {
     box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
 }
 
-input:focus, textarea:focus {
-    border: 2px solid #7f43b8 !important; /* Aplique a cor roxa e use !important para garantir a prioridade */
-    box-shadow: 0 0 5px #7f43b8; /* Adiciona um efeito suave de sombra */
-    outline: none; /* Remove o outline padrão do navegador */
+/* Inputs */
+input:focus,
+textarea:focus {
+    border: 2px solid #7f43b8 !important;
+    box-shadow: 0 0 5px #7f43b8;
+    outline: none;
 }
 
+/* Botão WhatsApp */
 .btn-whatsapp {
     position: fixed;
     bottom: 20px;
     right: 20px;
     background-color: #25D366;
     color: white;
-    padding: 15px 25px;
-    border-radius: 50px;
-    font-size: 20px;
-    text-decoration: none;
+    padding: 10px; /* reduzido */
+    border-radius: 50%;
+    font-size: 16px;
+    width: 45px; /* tamanho fixo */
+    height: 45px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
     transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    z-index: 1000;
+}
+
+.btn-whatsapp img {
+    width: 25px;
+    height: 25px;
 }
 
 .btn-whatsapp:hover {
@@ -98,26 +126,68 @@ input:focus, textarea:focus {
     transform: scale(1.1);
 }
 
+/* Rodapé */
 .footer {
     background-color: black;
     color: #fcfcfc;
     text-align: center;
     padding: 20px 0;
-    margin-top: 50px;
     border-top: 2px solid #7f43b8;
 }
 
+/* Destaques */
 .highlight {
     color: #7f43b8;
     font-size: 1.2em;
     font-weight: bold;
 }
 
+/* Carousel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1);
+}
+
+/* Responsivo */
 @media (max-width: 768px) {
+    body {
+        min-height: auto;
+    }
+
+    main {
+        flex: none;
+        padding-top: 70px; /* menor espaço para telas pequenas */
+    }
+
     .navbar-nav {
         text-align: center;
     }
+
     .service-item {
         margin-bottom: 20px;
+    }
+
+    .carousel-caption {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .carousel-item img {
+        height: auto !important;
+        max-height: 300px;
+    }
+
+    .section {
+        padding: 60px 20px;
+    }
+
+    .btn-whatsapp {
+        width: 40px;
+        height: 40px;
+    }
+
+    .btn-whatsapp img {
+        width: 22px;
+        height: 22px;
     }
 }
