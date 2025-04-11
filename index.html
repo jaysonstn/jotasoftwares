@@ -2,8 +2,8 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Jota Softwares</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Adicionada -->
+    <title>Jota Softwares - Início</title>
     <meta name="description" content="Jota Softwares - Desenvolvimento de soluções tecnológicas.">
     <meta name="keywords" content="desenvolvimento web, aplicativos mobile, sistemas empresariais">
     <meta name="author" content="Jota Softwares">
@@ -13,112 +13,106 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
     <link rel="stylesheet" href="./Styles/styles.css">
 </head>
-<body style="font-family: 'Poppins', sans-serif;">
+<body>
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">Jota Softwares</a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            <a class="navbar-brand" href="index.html">Jota Softwares</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">Serviços</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="servicos.html">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    
-    <section id="home" class="section text-center">
-        <div class="container">
-            <h1>Somos uma empresa especializada em <br><span class="highlight">desenvolvimento de softwares</span> personalizados <br>para atender às suas <span class="highlight">necessidades</span>.</h1>
-        </div>
-    </section>
-   
-    <section id="services" class="section">
-        <div class="container text-center">
-            <h2 data-aos="fade-up">Nossos Serviços</h2>
-            <div class="row justify-content-center"> 
-                <div class="col-md-4">
-                    <div class="service-item" data-aos="zoom-in"> 
-                        <img src="./img/responsive-design.png" alt="Desenvolvimento Web" class="mb-3" width="50" loading="lazy">
-                        <h4>Desenvolvimento Web</h4>
-                        <p>Criação de sites modernos e responsivos.</p>
+
+    <!-- Home -->
+    <main>
+        <section class="section text-center" data-aos="fade-up">
+            <div class="container">
+                <h1 class="fs-3 fs-md-1">
+                    Transformamos ideias em <span class="highlight">soluções digitais inteligentes</span> que impulsionam o seu negócio.
+                </h1>
+                <p class="mt-4 fs-6 fs-md-5">
+                    Nossa missão é potencializar a performance do seu negócio por meio de <strong>plataformas web modernas</strong>, <strong>aplicativos mobile intuitivos</strong> e <strong>sistemas empresariais inteligentes</strong>. 
+                    Tudo isso com foco total em <strong>eficiência operacional</strong>, <strong>inovação contínua</strong> e <strong>excelência na experiência do usuário</strong>.
+                </p>
+                <p class="mt-3 fs-6 fs-md-5">
+                    
+            </div>
+        </section>
+        
+        <!-- Projetos Realizados -->
+        <section class="section py-5" style="background-color: #111;">
+            <div class="container">
+                <h2 class="text-center text-white mb-5" data-aos="fade-up">Projetos Realizados</h2>
+
+                <div id="carouselProjetos" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+
+                        <!-- Slide 1 -->
+                        <div class="carousel-item active">
+                            <div class="row justify-content-center">
+                                <div class="col-12 col-md-10 text-center">
+                                    <img src="./img/projeto1.png" class="d-block w-100 rounded shadow img-fluid" alt="Projeto 1" style="max-height: 500px; object-fit: cover;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-12 col-md-10 text-center">
+                                    <img src="./img/projeto2.png" class="d-block w-100 rounded shadow img-fluid" alt="Projeto 2" style="max-height: 500px; object-fit: cover;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-12 col-md-10 text-center">
+                                    <img src="./img/projeto3.png" class="d-block w-100 rounded shadow img-fluid" alt="Projeto 3" style="max-height: 500px; object-fit: cover;">
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-item" data-aos="zoom-in">
-                        <img src="./img/smartphone.png" alt="Aplicativos Mobile" class="mb-3" width="50" loading="lazy">
-                        <h4>Aplicativos Mobile</h4>
-                        <p>Desenvolvimento de aplicativos para iOS e Android.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-item" data-aos="zoom-in">
-                        <img src="./img/accounting-system.png" alt="Sistemas Empresariais" class="mb-3" width="50" loading="lazy">
-                        <h4>Sistemas Empresariais</h4>
-                        <p>Softwares para gestão e automação de processos.</p>
-                    </div>
+
+                    <!-- Controles -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselProjetos" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" style="filter: invert(1);"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselProjetos" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" style="filter: invert(1);"></span>
+                    </button>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-   <!-- <section id="contato" class="section text-center">
-        <div class="container">
-            <h2>Entre em Contato</h2>
-            <p>Telefone: (49) 99966-6457</p>
-        </div>
-    </section> -->
-
-    <!--Contato-->
-    <section id="contato" class="section text-center" style="background-color: #000; padding: 50px 0;">
-        <div class="container">
-            <h2 class="text-white">Entre em Contato</h2>
-            <p class="text-white">Telefone: (49) 99966-6457</p>
-    
-            
-            <form id="contato-form" action="javascript:void(0);" method="POST" class="mx-auto"
-                style="max-width: 400px; background: #111; padding: 20px; border-radius: 10px; box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);">
-                
-                <div class="mb-3 text-start">
-                    <label for="nome" class="form-label text-white" style="font-weight: 500; display: block;">Nome</label>
-                    <input type="text" class="form-control bg-dark text-white" id="nome" name="nome" required style="width: 100%; border: 2px solid transparent;">
-                </div>
-                <div class="mb-3 text-start">
-                    <label for="email" class="form-label text-white" style="font-weight: 500; display: block;">E-mail</label>
-                    <input type="email" class="form-control bg-dark text-white" id="email" name="email" required style="width: 100%; border: 2px solid transparent;">
-                </div>
-                <div class="mb-3 text-start">
-                    <label for="mensagem" class="form-label text-white" style="font-weight: 500; display: block;">Mensagem</label>
-                    <textarea class="form-control bg-dark text-white" id="mensagem" name="mensagem" rows="4" required style="width: 100%; border: 2px solid transparent;"></textarea>
-                </div>
-                <div id="msgErro" class="erro"></div>
-                <button type="submit" class="btn btn-primary w-100">Enviar</button>
-            </form>
-        </div>
-    </section>
-    
-    
-    
-    
+    <!-- WhatsApp -->
     <a href="https://wa.me/5549999666457" class="btn-whatsapp" target="_blank">
-        <img src="./img/whatsapp-icon.png" alt="WhatsApp" width="50">
+        <img src="./img/whatsapp-icon.png" alt="WhatsApp" width="30">
     </a>
-    
+
+    <!-- Footer -->
     <footer class="footer bg-dark text-white text-center py-3">
         <div class="container">
             <p>&copy; 2025 Jota Softwares - Todos os direitos reservados.</p>
         </div>
     </footer>
-    
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>AOS.init();</script>
-    <!--<script src="https://cdn.emailjs.com/dist/email.min.js"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="./Scripts/script.js"></script>
-
 </body>
 </html>
