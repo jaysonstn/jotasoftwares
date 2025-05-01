@@ -165,8 +165,8 @@ textarea:focus {
 /* Botão Voltar ao Topo */
 .btn-topo {
     position: fixed;
-    bottom: 80px;
-    right: 25px;
+    bottom: 90px;
+    right: 26px;
     background-color: #7f43b8;
     color: white;
     padding: 14px;
@@ -186,7 +186,7 @@ textarea:focus {
 }
 
 .btn-topo i {
-    font-size: 16px;
+    font-size: 20px;
 }
 
 
