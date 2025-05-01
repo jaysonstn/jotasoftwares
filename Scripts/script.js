@@ -30,3 +30,21 @@ document.getElementById("contato-form").addEventListener("submit", function(even
         msg.style.marginBottom = "10px";
     });
 });
+
+/*Scroll*/
+document.querySelectorAll('.scroll-link').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault(); // Impede o hash na URL
+  
+      const targetId = this.getAttribute('href').substring(1); // remove o #
+      const targetSection = document.getElementById(targetId);
+  
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+  
+        // Remove o hash da URL sem recarregar
+        history.pushState("", document.title, window.location.pathname + window.location.search);
+      }
+    });
+  });
+  
