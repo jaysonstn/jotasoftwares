@@ -19,6 +19,8 @@ main {
     padding-top: 80px; /* Correção: espaço para a navbar sticky */
 }
 
+
+
 /* Navbar */
 .navbar {
     background-color: black;
@@ -74,6 +76,16 @@ main {
 .section {
     padding: 80px 0;
     text-align: center;
+    position: relative;
+}
+
+/* Efeito de fade nas seções */
+[data-aos="fade-up"] {
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+[data-aos="fade-up"].aos-animate {
+    opacity: 1;
 }
 
 /* Itens de serviço */
@@ -97,6 +109,32 @@ textarea:focus {
     outline: none;
 }
 
+/* Projetos */
+.project-item {
+    padding: 15px;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.8s ease both;
+}
+
+.project-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 20px rgba(127, 67, 184, 0.3);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Botão WhatsApp */
 .btn-whatsapp {
     position: fixed;
@@ -107,8 +145,8 @@ textarea:focus {
     padding: 10px; /* reduzido */
     border-radius: 50%;
     font-size: 16px;
-    width: 45px; /* tamanho fixo */
-    height: 45px;
+    width: 50px; /* tamanho fixo */
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -117,14 +155,43 @@ textarea:focus {
 }
 
 .btn-whatsapp img {
-    width: 25px;
-    height: 25px;
+    width: 40px;
+    height: 40px;
 }
 
 .btn-whatsapp:hover {
     background-color: #1EBE5D;
     transform: scale(1.1);
 }
+
+/* Botão Voltar ao Topo */
+.btn-topo {
+    position: fixed;
+    bottom: 80px;
+    right: 25px;
+    background-color: #7f43b8;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    display: none;
+    z-index: 1000;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-topo:hover {
+    transform: scale(1.2);
+    background-color: #682fa1;
+}
+
+.btn-topo i {
+    font-size: 16px;
+}
+
+
 
 /* Rodapé */
 .footer {
@@ -142,16 +209,15 @@ textarea:focus {
     font-weight: bold;
 }
 
-/* Carousel */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    filter: invert(1);
-}
-
 /* Responsivo */
 @media (max-width: 768px) {
     body {
         min-height: auto;
+    }
+
+    #home {
+        background-size: cover;
+        background-position: center center;
     }
 
     main {
@@ -167,16 +233,6 @@ textarea:focus {
         margin-bottom: 20px;
     }
 
-    .carousel-caption {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .carousel-item img {
-        height: auto !important;
-        max-height: 300px;
-    }
-
     .section {
         padding: 60px 20px;
     }
@@ -190,4 +246,44 @@ textarea:focus {
         width: 22px;
         height: 22px;
     }
+
+    #backToTop {
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+/* Plano de fundo da seção Home */
+
+#home {
+    background-image: url('../img/back_home.png');
+    background-size: cover; /* Ajusta o background para cobrir toda a área */
+    background-position: center center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Impede que o background se repita */
+    position: relative;
+    padding: 100px 0; /* Ajuste o padding conforme necessário */
+}
+
+.home-bg {
+    background-image: url('../img/back_home.png'); /* caminho relativo à pasta de CSS */
+    background-size: cover;
+    background-position: center left;
+    background-repeat: no-repeat;
+    height: 100vh;
+    min-height: 600px;
+    position: relative;
+    z-index: 1;
+    padding: 100px 0;
+    color: #fcfcfc;
+}
+
+.home-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+    z-index: -1;
 }
