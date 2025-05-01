@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./Styles/styles.css"> <!-- Link para o CSS externo -->
+    
+
 </head>
 <body id="topo">
     <!-- Navbar -->
@@ -87,27 +89,33 @@
     </section>
 
     <!-- Contato -->
-    <section id="contato" class="section" style="background-color: #000;" data-aos="fade-up">
-        <div class="container">
-            <h2 class="text-white mb-3">Fale com a gente</h2>
-            <p class="text-white">Telefone: (49) 99966-6457</p>
-            <form class="mx-auto" style="max-width: 400px;">
-                <div class="mb-3 text-start">
-                    <label for="nome" class="form-label text-white">Nome</label>
-                    <input type="text" class="form-control bg-dark text-white" id="nome" name="nome" required>
-                </div>
-                <div class="mb-3 text-start">
-                    <label for="email" class="form-label text-white">E-mail</label>
-                    <input type="email" class="form-control bg-dark text-white" id="email" name="email" required>
-                </div>
-                <div class="mb-3 text-start">
-                    <label for="mensagem" class="form-label text-white">Mensagem</label>
-                    <textarea class="form-control bg-dark text-white" id="mensagem" name="mensagem" rows="4" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary w-100">Enviar</button>
-            </form>
+<section id="contato" class="section" style="background-color: #000;" data-aos="fade-up">
+    <div class="container">
+      <h2 class="text-white mb-3">Fale com a gente</h2>
+      <p class="text-white">Telefone: (49) 99966-6457</p>
+  
+      <!-- Div para mostrar mensagens de sucesso/erro -->
+      <div id="msgErro"></div>
+  
+      <!-- Formulário com ID -->
+      <form id="contato-form" class="mx-auto" style="max-width: 400px;">
+        <div class="mb-3 text-start">
+          <label for="nome" class="form-label text-white">Nome</label>
+          <input type="text" class="form-control bg-dark text-white" id="nome" name="nome" required>
         </div>
-    </section>
+        <div class="mb-3 text-start">
+          <label for="email" class="form-label text-white">E-mail</label>
+          <input type="email" class="form-control bg-dark text-white" id="email" name="email" required>
+        </div>
+        <div class="mb-3 text-start">
+          <label for="mensagem" class="form-label text-white">Mensagem</label>
+          <textarea class="form-control bg-dark text-white" id="mensagem" name="mensagem" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Enviar</button>
+      </form>
+    </div>
+  </section>
+  
 
     <!-- Botão WhatsApp -->
     <a href="https://wa.me/5549999666457" class="btn-whatsapp" target="_blank">
@@ -126,8 +134,12 @@
     </footer>
 
     <!-- Scripts -->
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="./Scripts/script.js"></script>
+
     <script>
         AOS.init({ duration: 1000, once: true });
         const btnTopo = document.querySelector('.btn-topo');
