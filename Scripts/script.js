@@ -47,4 +47,18 @@ document.querySelectorAll('.scroll-link').forEach(link => {
       }
     });
   });
+
+/*Tyoed*/
+const typed = new Typewriter('#typed-text', {
+    strings: [
+        "Desenvolvimento Web.",
+        "Desenvolvimento Mobile.",
+        "Frontend.",
+        "Backend."
+    ],
+    autoStart: true,
+    loop: true, // Faz o efeito de digitação repetir infinitamente
+    delay: 75 // Ajusta a velocidade da digitação
+});
+
   
