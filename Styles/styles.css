@@ -273,8 +273,7 @@ main {
 
     #home {
         background-size: cover;
-        background-position: left;
-        background-attachment: fixed;
+        background-position: 90%  center !important;
     }
 
     main {
