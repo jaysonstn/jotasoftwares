@@ -224,19 +224,21 @@ main {
     cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s ease;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
 }
 
 /* Ajuste do ícone */
 .btn-topo i {
     font-size: 26px; /* Ajusta o tamanho do ícone */
     margin: 0; /* Remove qualquer margem extra */
-    transform: translateY(-1px); /* Move o ícone 1px para cima */
+    transform: translateY(0); /* Ajuste para garantir centralização */
 }
 
 .btn-topo:hover {
     transform: scale(1.2);
     background-color: #682fa1;
 }
+
 
 
 
