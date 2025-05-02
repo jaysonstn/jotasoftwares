@@ -61,4 +61,21 @@ const typed = new Typewriter('#typed-text', {
     delay: 75 // Ajusta a velocidade da digitação
 });
 
+/*Botão topo*/
+document.addEventListener('DOMContentLoaded', function () {
+    const btnTopo = document.querySelector('.btn-topo'); // Use querySelector para pegar o <a>
+  
+    function toggleBtn() {
+      if (window.scrollY > 100) {
+        btnTopo.style.display = 'flex';
+      } else {
+        btnTopo.style.display = 'none';
+      }
+    }
+  
+    window.addEventListener('scroll', toggleBtn);
+    toggleBtn(); // Executa logo após carregar a página
+  });
+  
+
   
