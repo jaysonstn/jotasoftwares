@@ -63,19 +63,29 @@ const typed = new Typewriter('#typed-text', {
 
 /*Botão topo*/
 document.addEventListener('DOMContentLoaded', function () {
-    const btnTopo = document.querySelector('.btn-topo'); // Use querySelector para pegar o <a>
-  
-    function toggleBtn() {
-      if (window.scrollY > 100) {
-        btnTopo.style.display = 'flex';
-      } else {
-        btnTopo.style.display = 'none';
-      }
+  const btnTopo = document.querySelector('.btn-topo'); // Seleciona o botão
+
+  // Função para mostrar ou esconder o botão com base no scroll
+  function toggleBtn() {
+    if (window.scrollY > 100) {
+      btnTopo.style.display = 'flex'; // Mostra o botão quando rolar para baixo
+    } else {
+      btnTopo.style.display = 'none'; // Esconde o botão quando estiver no topo
     }
-  
-    window.addEventListener('scroll', toggleBtn);
-    toggleBtn(); // Executa logo após carregar a página
+  }
+
+  // Função de rolagem suave ao clicar no botão
+  btnTopo.addEventListener('click', function (event) {
+    event.preventDefault(); // Previne o comportamento padrão do botão, que seria saltar imediatamente para o topo
+    window.scrollTo({
+      top: 0, // Vai para o topo
+      behavior: 'smooth' // Faz uma rolagem suave
+    });
   });
-  
+
+  window.addEventListener('scroll', toggleBtn); // Escuta o evento de rolagem
+  toggleBtn(); // Executa ao carregar a página para verificar o estado inicial
+});
+
 
   
