@@ -256,6 +256,13 @@ main {
     font-weight: bold;
 }
 
+#typed-text {
+    font-weight: bold;
+    color: #7f43b8; /* Você pode mudar a cor ou estilo conforme preferir */
+    font-size: 1.5rem;
+}
+
+
 /* Responsivo */
 @media (max-width: 768px) {
     body {
