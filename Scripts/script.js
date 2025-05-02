@@ -88,4 +88,16 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+// Recolhe o botão home
+
+document.querySelectorAll('.navbar-collapse .nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+
+    if (navbarCollapse.classList.contains('show')) {
+      navbarToggler.click(); // Simula o clique para fechar
+    }
+  });
+});
   
