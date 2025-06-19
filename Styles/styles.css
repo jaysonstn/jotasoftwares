@@ -16,7 +16,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding-top: 80px; /* Correção: espaço para a navbar sticky */
+    padding-top: 80px;
 }
 
 /* Navbar */
@@ -58,7 +58,7 @@ main {
 }
 
 .navbar-toggler {
-    border-color:  rgba(111, 66, 193, 0.8);
+    border-color: rgba(111, 66, 193, 0.8);
     transition: transform 0.3s ease-in-out;
 }
 
@@ -67,9 +67,7 @@ main {
 }
 
 .navbar-toggler-icon {
-    /*filter: invert(100%);*/
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(111, 66, 193, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-      
 }
 
 /* Seções */
@@ -79,27 +77,93 @@ main {
     position: relative;
 }
 
-/* Efeito de fade nas seções */
+/* Animação AOS - fade-up suave para seções (serviços e features) */
 [data-aos="fade-up"] {
     opacity: 0;
-    transition: opacity 0.6s ease-in-out;
+    transform: translateY(30px);
+    transition-property: opacity, transform;
+    transition-duration: 1000ms;
+    transition-timing-function: ease-out;
 }
+
 [data-aos="fade-up"].aos-animate {
     opacity: 1;
+    transform: translateY(0);
 }
 
-/*Serviços*/
-.servico-icon {
+/* Serviços - Cards */
+#servicos {
+    background-color: #111;
+    color: #fcfcfc;
+}
+
+#servicos h2 {
+    color: #fcfcfc;
+}
+
+.card {
+    background-color: #1a1a1a;
+    border: none;
+    border-radius: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(127, 67, 184, 0.4);
+}
+
+.card .card-title {
+    color: #7f43b8;
+    font-weight: 600;
+}
+
+.card .card-text {
+    color: #ccc;
+    font-size: 0.95rem;
+}
+
+.card i {
+    color: #7f43b8;
     transition: transform 0.3s ease, filter 0.3s ease;
-    display: inline-block;
 }
 
-.servico-icon:hover {
+.card i:hover {
     transform: scale(1.2);
-    filter: brightness(1.3);
+    filter: brightness(1.5);
 }
 
+.card-body {
+    padding: 30px 20px;
+}
 
+/* Feature Cards (Por que escolher a Jota Softwares) */
+.feature-card {
+    background-color: #1a1a1a;
+    border-radius: 1rem;
+    box-shadow: 0 0 15px rgba(127, 67, 184, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 30px 20px;
+    height: 100%;
+    text-align: left;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 30px rgba(127, 67, 184, 0.6);
+}
+
+.feature-card h5 {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #7f43b8;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    color: #ccc;
+    font-size: 0.95rem;
+}
 
 /* Projetos */
 .project-card {
@@ -116,7 +180,6 @@ main {
     border-radius: 1rem;
 }
 
-/* Efeito de sombra roxa */
 .project-card::after {
     content: "";
     position: absolute;
@@ -131,9 +194,6 @@ main {
     border-radius: 1rem;
 }
 
-
-
-/* Hover */
 .project-card:hover {
     transform: translateY(-6px);
 }
@@ -150,10 +210,7 @@ main {
     opacity: 1;
 }
 
-
-
-
-/* Animação de brilho */
+/* Animação brilho */
 @keyframes glow {
     0% {
         box-shadow: 0 0 5px #7f5fff, 0 0 10px #7f5fff, 0 0 15px #7f5fff;
@@ -166,19 +223,6 @@ main {
     }
 }
 
-/* Animação de fadeInUp para os projetos */
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
 /* Botão WhatsApp */
 .btn-whatsapp {
     position: fixed;
@@ -186,11 +230,11 @@ main {
     right: 20px;
     background-color: #25d366;
     color: white;
-    font-size: 40px; /* Aumenta o tamanho do ícone */
+    font-size: 40px;
     padding: 15px;
     border-radius: 50%;
     z-index: 1000;
-    text-decoration: none; /* Remove sublinhado */
+    text-decoration: none;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     display: flex;
     align-items: center;
@@ -199,11 +243,11 @@ main {
 }
 
 .btn-whatsapp i {
-    font-size: 28px; /* Ajusta o tamanho do ícone dentro do botão */
+    font-size: 28px;
 }
 
 .btn-whatsapp:hover {
-    transform: scale(1.1); /* Adiciona um efeito de zoom no ícone quando o mouse passa por cima */
+    transform: scale(1.1);
 }
 
 /* Botão Voltar ao Topo */
@@ -226,23 +270,18 @@ main {
     cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s ease;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    text-decoration: none;
 }
 
-/* Ajuste do ícone */
 .btn-topo i {
-    font-size: 26px; /* Ajusta o tamanho do ícone */
-    margin: 0; /* Remove qualquer margem extra */
-    transform: translateY(0); /* Ajuste para garantir centralização */
+    font-size: 26px;
+    margin: 0;
+    transform: translateY(0);
 }
 
 .btn-topo:hover {
     transform: scale(1.2);
     background-color: #682fa1;
 }
-
-
-
 
 /* Rodapé */
 .footer {
@@ -262,10 +301,43 @@ main {
 
 #typed-text {
     font-weight: bold;
-    color: #7f43b8; /* Você pode mudar a cor ou estilo conforme preferir */
+    color: #7f43b8;
     font-size: 1.5rem;
 }
 
+/* Plano de fundo da seção Home */
+#home {
+    background-image: url('../img/back_home.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 100px 0;
+}
+
+.home-bg {
+    background-image: url('../img/back_home.png');
+    background-size: cover;
+    background-position: center left;
+    background-repeat: no-repeat;
+    height: 100vh;
+    min-height: 600px;
+    position: relative;
+    z-index: 1;
+    padding: 100px 0;
+    color: #fcfcfc;
+}
+
+.home-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+    z-index: -1;
+}
 
 /* Responsivo */
 @media (max-width: 768px) {
@@ -275,12 +347,12 @@ main {
 
     #home {
         background-size: cover;
-        background-position: 90%  center !important;
+        background-position: 90% center !important;
     }
 
     main {
         flex: none;
-        padding-top: 70px; /* menor espaço para telas pequenas */
+        padding-top: 70px;
     }
 
     .navbar-nav {
@@ -309,38 +381,8 @@ main {
         bottom: 15px;
         right: 15px;
     }
-}
 
-/* Plano de fundo da seção Home */
-#home {
-    background-image: url('../img/back_home.png');
-    background-size: cover; /* Ajusta o background para cobrir toda a área */
-    background-position: center center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Impede que o background se repita */
-    position: relative;
-    padding: 100px 0; /* Ajuste o padding conforme necessário */
-}
-
-.home-bg {
-    background-image: url('../img/back_home.png'); /* caminho relativo à pasta de CSS */
-    background-size: cover;
-    background-position: center left;
-    background-repeat: no-repeat;
-    height: 100vh;
-    min-height: 600px;
-    position: relative;
-    z-index: 1;
-    padding: 100px 0;
-    color: #fcfcfc;
-}
-
-.home-bg::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.6), rgba(0,0,0,0.2));
-    z-index: -1;
+    .card-body {
+        padding: 20px;
+    }
 }
